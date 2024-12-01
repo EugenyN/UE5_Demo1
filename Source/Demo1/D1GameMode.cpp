@@ -11,8 +11,8 @@
 
 int32 DebugGizmoDraw = 1;
 FAutoConsoleVariableRef CVarDebugGizmoDraw(TEXT("demo1.DebugGizmoDraw"), DebugGizmoDraw,
-                                      TEXT("Draw debug info demo1.DebugGizmoDraw.\n0: Disable, 1: Enable"),
-                                      ECVF_Default);
+									  TEXT("Draw debug info demo1.DebugGizmoDraw.\n0: Disable, 1: Enable"),
+									  ECVF_Default);
 
 AD1GameMode::AD1GameMode()
 	: Super()
@@ -59,7 +59,7 @@ bool AD1GameMode::IsReachablePoint(const FVector& SourcePoint, const FVector& Ta
 	if (Dist > PermissibleInaccuracy)
 		return false; // the point is not reachable with the necessary accuracy
 
-	float Lenght = 0;
+	double Lenght = 0;
 	return NavSys->GetPathLength(SourcePoint, TargetPoint, Lenght) != ENavigationQueryResult::Type::Fail;
 }
 
